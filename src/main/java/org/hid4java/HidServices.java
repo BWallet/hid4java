@@ -27,15 +27,24 @@ public class HidServices {
    */
   private final HidDeviceManager deviceManager;
 
+  public HidServices(boolean scan) throws HidException {
+
+    deviceManager = new HidDeviceManager(listeners, 500);
+    if (scan)
+    	deviceManager.start();
+
+  }
+  
   /**
    *
    * @throws HidException If something goes wrong
    */
   public HidServices() throws HidException {
 
-    deviceManager = new HidDeviceManager(listeners, 500);
-    deviceManager.start();
-
+    // deviceManager = new HidDeviceManager(listeners, 500);
+    // deviceManager.start();
+    this(true);
+	
   }
 
   /**
