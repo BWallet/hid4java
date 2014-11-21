@@ -31,6 +31,9 @@ public class HidDeviceInfo {
 
   private int interfaceNumber;
 
+  public HidDeviceInfo() {
+  }
+  
   /**
    * @param hidDeviceInfoStructure The HidDeviceInfoStructure providing the data
    */
